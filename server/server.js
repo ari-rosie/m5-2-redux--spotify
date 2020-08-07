@@ -29,7 +29,7 @@ app.get('/spotify_access_token', async (req, res, next) => {
   }
 
   const fetchToken = await fetch('https://accounts.spotify.com/api/token', reqObj);
-  const data = fetchToken.json();
+  const data = await fetchToken.json();
 
   res.send(data);
 });
